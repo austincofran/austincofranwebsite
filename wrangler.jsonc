@@ -1,0 +1,8 @@
+{
+  // Cloudflare deploy config: serve this folder as a static site.
+  "name": "austincofranwebsite",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./"
+  }
+}
