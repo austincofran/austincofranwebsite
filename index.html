@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Austin Cofran · Photographer, Connecticut</title>
+<meta name="description" content="Austin Cofran is a Connecticut photographer for studio and on-location portraits, couples, weddings, events and sports.">
+<meta property="og:title" content="Austin Cofran · Photographer">
+<meta property="og:description" content="Austin Cofran is a Connecticut photographer for studio and on-location portraits, couples, weddings, events and sports.">
+<meta property="og:image" content="assets/photos/portraits/studio-seamless-01-1800.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: the page is the studio seamless. Name set wide like a camera-body badge; uncropped masonry of frames, each with its real EXIF readout. */
+:root{
+  --paper:#E4E3DF;      /* grey seamless */
+  --paper-2:#D5D4CF;    /* image wells */
+  --ink:#141413;
+  --ink-2:#5A5954;
+  --line:#C2C1BB;
+  --accent:#C9501A;     /* AF bracket orange */
+  --on-accent:#FFFFFF;
+  --scrim:#E4E3DF;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --gl:max(16px,4vw,env(safe-area-inset-left,0px));
+  --gr:max(16px,4vw,env(safe-area-inset-right,0px));
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#121211; --paper-2:#1D1D1B; --ink:#EAE9E4; --ink-2:#9A9992; --line:#2E2D2A;
+    --accent:#EE6A2C; --on-accent:#121211; --scrim:#121211; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121211; --paper-2:#1D1D1B; --ink:#EAE9E4; --ink-2:#9A9992; --line:#2E2D2A;
+  --accent:#EE6A2C; --on-accent:#121211; --scrim:#121211; color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html.lb-open{overflow:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1360px;margin-inline:auto;padding-left:var(--gl);padding-right:var(--gr)}
+.mono{font-family:var(--f-mono)}
+
+/* header */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);background:color-mix(in srgb,var(--paper) 88%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.mark{font-family:var(--f-display);font-stretch:125%;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.nav{display:flex;gap:clamp(14px,3vw,32px);font-family:var(--f-mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.nav a{text-decoration:none;color:var(--ink-2)}
+.nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,4vw,64px);align-items:end;padding-block:clamp(36px,6vw,80px) clamp(56px,7vw,104px)}
+.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 22px;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+.name{display:flex;flex-direction:column;margin:0;font-family:var(--f-display);font-stretch:125%;font-weight:800;font-size:clamp(52px,8.6vw,136px);line-height:.86;letter-spacing:-.03em;text-transform:uppercase}
+.lede{max-width:34ch;margin:30px 0 0;font-size:clamp(18px,1.6vw,22px);line-height:1.45}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border:0;border-radius:2px;background:var(--ink);color:var(--paper);font-family:var(--f-mono);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background-color .15s,color .15s}
+.btn:hover{background:var(--accent);color:var(--on-accent)}
+.textlink{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-underline-offset:6px;text-decoration-thickness:2px;text-decoration-color:var(--accent)}
+
+/* viewfinder brackets, shared by hero and grid */
+.af{position:absolute;pointer-events:none;
+  --c:var(--accent); --s:24px; --w:2px;
+  background:
+    linear-gradient(var(--c),var(--c)) top left/var(--s) var(--w),
+    linear-gradient(var(--c),var(--c)) top left/var(--w) var(--s),
+    linear-gradient(var(--c),var(--c)) top right/var(--s) var(--w),
+    linear-gradient(var(--c),var(--c)) top right/var(--w) var(--s),
+    linear-gradient(var(--c),var(--c)) bottom left/var(--s) var(--w),
+    linear-gradient(var(--c),var(--c)) bottom left/var(--w) var(--s),
+    linear-gradient(var(--c),var(--c)) bottom right/var(--s) var(--w),
+    linear-gradient(var(--c),var(--c)) bottom right/var(--w) var(--s);
+  background-repeat:no-repeat}
+
+.hero-shot{margin:0;min-width:0}
+.vf{position:relative;overflow:hidden;background:var(--paper-2)}
+.vf img{display:block;width:100%;height:auto;animation:pull 1.3s cubic-bezier(.2,.7,.2,1) both}
+.vf .af{inset:16px;animation:lock 1.3s cubic-bezier(.2,.7,.2,1) both}
+@keyframes pull{from{filter:blur(9px);transform:scale(1.025)}to{filter:blur(0);transform:none}}
+@keyframes lock{from{inset:-2px}to{inset:16px}}
+.readout{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 18px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.readout .vals{display:flex;flex-wrap:wrap;gap:4px 14px}
+.readout b{font-weight:500;color:var(--ink)}
+
+/* sections */
+.section{border-top:1px solid var(--line)}
+.section > .wrap{padding-block:clamp(56px,8vw,112px)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:20px 32px;margin-bottom:clamp(26px,3vw,44px)}
+h2{margin:0;font-family:var(--f-display);font-stretch:125%;font-weight:800;font-size:clamp(28px,3.6vw,48px);line-height:.95;letter-spacing:-.015em;text-transform:uppercase;text-wrap:balance}
+.kicker{margin:0 0 14px;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+
+/* filters */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:border-color .15s}
+.chip:hover{border-color:var(--ink-2)}
+.chip span{color:var(--ink-2);font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.chip[aria-pressed="true"] span{color:var(--accent)}
+
+/* grid */
+.grid{columns:3 280px;column-gap:clamp(14px,1.8vw,26px)}
+.shot{break-inside:avoid;margin:0 0 clamp(22px,2.6vw,36px)}
+.shot-btn{position:relative;display:block;width:100%;padding:0;border:0;background:var(--paper-2);cursor:zoom-in}
+.shot-btn img{display:block;width:100%;height:auto}
+.shot-btn .af{inset:10px;opacity:0;transition:opacity .18s,inset .25s cubic-bezier(.2,.7,.2,1)}
+.shot-btn:hover .af,.shot-btn:focus-visible .af{opacity:1;inset:18px}
+.shot-btn:focus-visible{outline-offset:2px}
+.cap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 12px;padding-top:11px}
+.cap .t{font-size:15px;font-weight:500;line-height:1.35}
+.cap .c{align-self:start;padding-top:2px;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
+.cap .x{grid-column:1/-1;font-family:var(--f-mono);font-size:11.5px;color:var(--ink-2)}
+
+/* about */
+.split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,88px)}
+.prose p{max-width:60ch;margin:0 0 1em}
+.prose p:first-child{font-size:clamp(19px,1.7vw,23px);line-height:1.45}
+.services{list-style:none;margin:32px 0 0;padding:0;border-top:1px solid var(--line)}
+.services li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}
+.services .where{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);text-align:right}
+.kit{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:26px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.kit b{font-weight:500;color:var(--ink)}
+
+/* booking */
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 24px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.field input,.field select,.field textarea{width:100%;padding:10px 0;border:0;border-bottom:1px solid var(--ink-2);border-radius:0;background:transparent;color:var(--ink);font:inherit;font-size:16px}
+.field select{cursor:pointer}
+.field select option{background:var(--paper);color:var(--ink)}
+.field textarea{resize:vertical;min-height:110px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-bottom-color:var(--accent);box-shadow:0 1px 0 var(--accent)}
+.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.form-note{margin:0;font-family:var(--f-mono);font-size:12px;color:var(--ink-2)}
+
+/* footer */
+.foot{border-top:1px solid var(--line)}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;padding-block:28px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:14px;background:var(--scrim);
+  padding:max(14px,env(safe-area-inset-top,0px)) var(--gr) max(14px,env(safe-area-inset-bottom,0px)) var(--gl)}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.lb-stage{position:relative;display:grid;place-items:center;min-height:0}
+.lb-stage img{display:block;max-width:100%;max-height:100%;max-height:calc(100dvh - 170px);width:auto;height:auto;object-fit:contain}
+.lb-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:44px;height:44px;padding:0 14px;border:1px solid var(--line);border-radius:2px;background:var(--paper);color:var(--ink);font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.lb-btn:hover{border-color:var(--ink-2)}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%)}
+.lb-prev{left:0}.lb-next{right:0}
+.lb-cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 20px;padding-top:12px;border-top:1px solid var(--line)}
+.lb-cap .t{font-weight:500}
+.lb-cap .x{font-family:var(--f-mono);font-size:12px;color:var(--ink-2)}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .grid{columns:1}
+  .form{grid-template-columns:1fr}
+  .nav{gap:14px}
+  .lb-prev,.lb-next{top:auto;bottom:8px;transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .vf img,.vf .af{animation:none}
+  .shot-btn .af{transition:none}
+}
+</style>
+
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="#top">Austin Cofran</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#book">Book</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <div class="hero-text">
+      <p class="eyebrow">Photographer · Connecticut</p>
+      <h1 class="name"><span>Austin</span><span>Cofran</span></h1>
+      <p class="lede">Studio and on-location portraits, couples, events and sports. Based in Connecticut, booking across the US.</p>
+      <div class="cta">
+        <a class="btn" href="#book">Book a session</a>
+        <a class="textlink" href="#work">See the work</a>
+      </div>
+    </div>
+    <figure class="hero-shot">
+      <div class="vf">
+        <img src="assets/photos/portraits/studio-seamless-01-1800.webp" srcset="assets/photos/portraits/studio-seamless-01-900.webp 720w, assets/photos/portraits/studio-seamless-01-1800.webp 1440w" sizes="(max-width: 860px) 92vw, 40vw" width="1440" height="1800" alt="Woman in a cream sweater and jeans sitting in a black armchair against a grey studio backdrop" fetchpriority="high">
+        <span class="af" aria-hidden="true"></span>
+      </div>
+      <figcaption class="readout">
+        <span>Studio session</span>
+        <span class="vals"><b>Sony α7 III</b><b>82mm</b><b>f/8</b><b>1/200</b><b>ISO 100</b></span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="kicker">Portfolio</p>
+          <h2>Selected work</h2>
+        </div>
+        <div class="chips" role="group" aria-label="Filter by category">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">All <span>11</span></button>
+          <button class="chip" type="button" data-filter="portraits" aria-pressed="false">Portraits <span>4</span></button>
+          <button class="chip" type="button" data-filter="couples" aria-pressed="false">Couples &amp; weddings <span>3</span></button>
+          <button class="chip" type="button" data-filter="sports" aria-pressed="false">Sports &amp; events <span>2</span></button>
+          <button class="chip" type="button" data-filter="brand" aria-pressed="false">Brand <span>1</span></button>
+          <button class="chip" type="button" data-filter="personal" aria-pressed="false">Personal <span>1</span></button>
+        </div>
+      </div>
+      <div class="grid">
+        <figure class="shot" data-cat="portraits" data-label="Portraits" data-title="Studio session, grey seamless" data-full="assets/photos/portraits/studio-seamless-01-1800.webp" data-exif="Sony α7 III · Tamron 70–180mm f/2.8 · 82mm · f/8 · 1/200 · ISO 100">
+          <button class="shot-btn" type="button" aria-label="View larger: Studio session, grey seamless">
+            <img src="assets/photos/portraits/studio-seamless-01-900.webp" srcset="assets/photos/portraits/studio-seamless-01-900.webp 720w, assets/photos/portraits/studio-seamless-01-1800.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 960px) 46vw, 30vw" width="1440" height="1800" loading="eager" decoding="async" alt="Woman in a cream sweater and jeans sitting in a black armchair against a grey studio backdrop">
+            <span class="af" aria-hidden="true"></span>
+          </button>
+          <figcaption class="cap"><span class="t">Studio session, grey seamless</span><span class="c">Portraits</span><span class="x">82mm · f/8 · 1/200 · ISO 100</span></figcaption>
+        </figure>
+        <figure class="shot" data-cat="portraits" data-label="Portraits" data-title="Prom portrait" data-full="assets/photos/portraits/prom-01-1800.webp" data-exif="Sony α7 III · Tamron 70–180mm f/2.8 · 112mm · f/2.8 · 1/250 · ISO 100">
+          <button class="shot-btn" type="button" aria-label="View larger: Prom portrait">
+            <img src="assets/photos/portraits/prom-01-900.webp" srcset="assets/photos/portraits/prom-01-900.webp 643w, assets/photos/portraits/prom-01-1800.webp 1286w" sizes="(max-width: 560px) 92vw, (max-width: 960px) 46vw, 30vw" width="1286" height="1800" loading="eager" decoding="async" alt="Woman in a black beaded gown standing on a white footbridge">
+            <span class="af" aria-hidden="true"></span>
+          </button>
+          <figcaption class="cap"><span class="t">Prom portrait</span><span class="c">Portraits</span><span class="x">112mm · f/2.8 · 1/250 · ISO 100</span></figcaption>
+        </figure>
+        <figure class="shot" data-cat="portraits" data-label="Portraits" data-title="Graduation portrait" data-full="assets/photos/portraits/grad-campus-01-1800.webp" data-exif="Sony α7 III · Tamron 70–180mm f/2.8 · 70mm · f/2.8 · 1/1000 · ISO 100">
+          <button class="shot-btn" type="button" aria-label="View larger: Graduation portrait">
+            <img src="assets/photos/portraits/grad-campus-01-900.webp" srcset="assets/photos/portraits/grad-campus-01-900.webp 720w, assets/photos/portraits/grad-campus-01-1800.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 960px) 46vw, 30vw" width="1440" height="1800" loading="eager" decoding="async" alt="Graduate in a white dress holding her gown over her shoulder on a campus path">
+            <span class="af" aria-hidden="true"></span>
+          </button>
+          <figcaption class="cap"><span class="t">Graduation portrait</span><span class="c">Portraits</span><span class="x">70mm · f/2.8 · 1/1000 · ISO 100</span></figcaption>
+        </figure>
+        <figure class="shot" data-cat="portraits" data-label="Portraits" data-title="Graduation, the group" data-full="assets/photos/portraits/grad-group-01-1800.webp" data-exif="Sony α7 III · Tamron 70–180mm f/2.8 · 86mm · f/2.8 · 1/640 · ISO 160">
+          <button class="shot-btn" type="button" aria-label="View larger: Graduation, the group">
+            <img src="assets/photos/portraits/grad-group-01-900.webp" srcset="assets/photos/portraits/grad-group-01-900.webp 720w, assets/photos/portraits/grad-group-01-1800.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 960px) 46vw, 30vw" width="1440" height="1800" loading="lazy" decoding="async" alt="Five graduates in gowns and stoles laughing together under a campus gate">
+            <span class="af" aria-hidden="true"></span>
+          </button>
+          <figcaption class="cap"><span class="t">Graduation, the group</span><span class="c">Portraits</span><span class="x">86mm · f/2.8 · 1/640 · ISO 160</span></figcaption>
+        </figure>
+        <figure class="shot" data-cat="couples" data-label="Couples &amp; weddings" data-title="Fall couples session" data-full="assets/photos/couples/fall-couple-01-1800.webp" data-exif="Sony α7 III · Tamron 70–180mm f/2.8 · 70mm · f/2.8 · 1/320 · ISO 1000">
+          <button class="shot-btn" type="button" aria-label="View larger: Fall couples session">
+            <img src="assets/photos/couples/fall-couple-01-900.webp" srcset="assets/photos/couples/fall-couple-01-900.webp 675w, assets/photos/couples/fall-couple-01-1800.webp 1350w" sizes="(max-width: 560px) 92vw, (max-width: 960px) 46vw, 30vw" width="1350" height="1800" loading="lazy" decoding="async" alt="Couple in black formalwear walking hand in hand through fall leaves">
+            <span class="af" aria-hidden="true"></span>
+          </button>
+          <figcaption class="cap"><span class="t">Fall couples session</span><span class="c">Couples &amp; weddings</span><span class="x">70mm · f/2.8 · 1/320 · ISO 1000</span></figcaption>
+        </figure>
+        <figure class="shot" data-cat="couples" data-label="Couples &amp; weddings" data-title="Couples session, black and white" data-full="assets/photos/couples/couple-bw-01-1800.webp" data-exif="Sony α7 III · Tamron 70–180mm f/2.8 · 78mm · f/2.8 · 1/320 · ISO 1000">
+          <button class="shot-btn" type="button" aria-label="View larger: Couples session, black and white">
+            <img src="assets/photos/couples/couple-bw-01-900.webp" srcset="assets/photos/couples/couple-bw-01-900.webp 900w, assets/photos/couples/couple-bw-01-1800.webp 1800w" sizes="(max-width: 560px) 92vw, (max-width: 960px) 46vw, 30vw" width="1800" height="1350" loading="lazy" decoding="async" alt="Black and white close-up of a couple touching foreheads">
+            <span class="af" aria-hidden="true"></span>
+          </button>
+          <figcaption class="cap"><span class="t">Couples session, black and white</span><span class="c">Couples &amp; weddings</span><span class="x">78mm · f/2.8 · 1/320 · ISO 1000</span></figcaption>
+        </figure>
+        <figure class="shot" data-cat="couples" data-label="Couples &amp; weddings" data-title="Wedding, first dance" data-full="assets/photos/couples/first-dance-01-1800.webp" data-exif="">
+          <button class="shot-btn" type="button" aria-label="View larger: Wedding, first dance">
+            <img src="assets/photos/couples/first-dance-01-900.webp" srcset="assets/photos/couples/first-dance-01-900.webp 720w, assets/photos/couples/first-dance-01-1800.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 960px) 46vw, 30vw" width="1440" height="1800" loading="lazy" decoding="async" alt="Black and white photo of a groom dipping his bride in a bright ballroom">
+            <span class="af" aria-hidden="true"></span>
+          </button>
+          <figcaption class="cap"><span class="t">Wedding, first dance</span><span class="c">Couples &amp; weddings</span></figcaption>
+        </figure>
+        <figure class="shot" data-cat="sports" data-label="Sports &amp; events" data-title="Mosconi Cup, day two" data-full="assets/photos/sports/mosconi-cup-01-1800.webp" data-exif="">
+          <button class="shot-btn" type="button" aria-label="View larger: Mosconi Cup, day two">
+            <img src="assets/photos/sports/mosconi-cup-01-900.webp" srcset="assets/photos/sports/mosconi-cup-01-900.webp 720w, assets/photos/sports/mosconi-cup-01-1800.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 960px) 46vw, 30vw" width="1440" height="1800" loading="lazy" decoding="async" alt="Pool player in a red jersey holding his cue in front of the arena crowd">
+            <span class="af" aria-hidden="true"></span>
+          </button>
+          <figcaption class="cap"><span class="t">Mosconi Cup, day two</span><span class="c">Sports &amp; events</span></figcaption>
+        </figure>
+        <figure class="shot" data-cat="sports" data-label="Sports &amp; events" data-title="Mosconi Cup, Team Europe" data-full="assets/photos/sports/mosconi-cup-02-1800.webp" data-exif="Sony α7 III · Tamron 70–180mm f/2.8 · 82mm · f/2.8 · 1/320 · ISO 800">
+          <button class="shot-btn" type="button" aria-label="View larger: Mosconi Cup, Team Europe">
+            <img src="assets/photos/sports/mosconi-cup-02-900.webp" srcset="assets/photos/sports/mosconi-cup-02-900.webp 600w, assets/photos/sports/mosconi-cup-02-1800.webp 1200w" sizes="(max-width: 560px) 92vw, (max-width: 960px) 46vw, 30vw" width="1200" height="1800" loading="lazy" decoding="async" alt="Player holding a Spanish flag overhead in a blue-lit arena">
+            <span class="af" aria-hidden="true"></span>
+          </button>
+          <figcaption class="cap"><span class="t">Mosconi Cup, Team Europe</span><span class="c">Sports &amp; events</span><span class="x">82mm · f/2.8 · 1/320 · ISO 800</span></figcaption>
+        </figure>
+        <figure class="shot" data-cat="brand" data-label="Brand" data-title="1928, brand shoot" data-full="assets/photos/brand/1928-bar-01-1800.webp" data-exif="">
+          <button class="shot-btn" type="button" aria-label="View larger: 1928, brand shoot">
+            <img src="assets/photos/brand/1928-bar-01-900.webp" srcset="assets/photos/brand/1928-bar-01-900.webp 675w, assets/photos/brand/1928-bar-01-1800.webp 1350w" sizes="(max-width: 560px) 92vw, (max-width: 960px) 46vw, 30vw" width="1350" height="1800" loading="lazy" decoding="async" alt="Two women in black suits posing at a dark wood bar">
+            <span class="af" aria-hidden="true"></span>
+          </button>
+          <figcaption class="cap"><span class="t">1928, brand shoot</span><span class="c">Brand</span></figcaption>
+        </figure>
+        <figure class="shot" data-cat="personal" data-label="Personal" data-title="Street, shot on iPhone" data-full="assets/photos/personal/street-01-1800.webp" data-exif="iPhone 15 Plus · 26mm eq. · f/1.6 · 1/247 · ISO 40">
+          <button class="shot-btn" type="button" aria-label="View larger: Street, shot on iPhone">
+            <img src="assets/photos/personal/street-01-900.webp" srcset="assets/photos/personal/street-01-900.webp 720w, assets/photos/personal/street-01-1800.webp 1440w" sizes="(max-width: 560px) 92vw, (max-width: 960px) 46vw, 30vw" width="1440" height="1800" loading="lazy" decoding="async" alt="Ornate stone building with domed towers under a grey sky">
+            <span class="af" aria-hidden="true"></span>
+          </button>
+          <figcaption class="cap"><span class="t">Street, shot on iPhone</span><span class="c">Personal</span><span class="x">26mm eq. · f/1.6 · 1/247 · ISO 40</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">About</p>
+        <h2>Natural light, real moments, cinematic finish</h2>
+      </div>
+      <div class="prose">
+        <p>I'm Austin, a photographer and videographer based in Connecticut. I shoot portraits in the studio and on location, and I travel for weddings, events and sports, from campus graduations to the Mosconi Cup.</p>
+        <p>My edits stay natural and filmic: true skin tones, the light that was actually there, and nothing overcooked.</p>
+        <ul class="services">
+          <li><span>Studio portraits</span><span class="where">In studio</span></li>
+          <li><span>Grad and prom sessions</span><span class="where">On location</span></li>
+          <li><span>Couples and weddings</span><span class="where">On location</span></li>
+          <li><span>Events and sports</span><span class="where">Anywhere in the US</span></li>
+          <li><span>Brand and campaign content</span><span class="where">Through Cofran Media</span></li>
+        </ul>
+        <div class="kit"><span>Kit</span><b>Sony α7 III</b><b>Tamron 70–180mm f/2.8</b><b>Lightroom Classic</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="book">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Booking</p>
+        <h2>Book a session</h2>
+        <p class="prose" style="margin-top:20px;max-width:36ch">Tell me what you're planning and when, and I'll get back to you with availability.</p>
+      </div>
+      <form class="form" id="book-form" novalidate>
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="f-type">Session type</label>
+          <select id="f-type" name="type">
+            <option>Studio portrait</option>
+            <option>Grad or prom</option>
+            <option>Couples</option>
+            <option>Wedding</option>
+            <option>Event or sports</option>
+            <option>Brand or campaign</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-date">Preferred date</label>
+          <input id="f-date" name="date" type="date">
+        </div>
+        <div class="field full">
+          <label for="f-msg">What do you have in mind?</label>
+          <textarea id="f-msg" name="message" rows="4"></textarea>
+        </div>
+        <div class="form-foot">
+          <button class="btn" type="submit">Send request</button>
+          <p class="form-note" id="form-note" role="status"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 Austin Cofran</span>
+    <span>Connecticut, USA</span>
+    <span>Brand and campaign work: Cofran Media</span>
+  </div>
+</footer>
+
+<div class="lb" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-top">
+    <span class="lb-n"></span>
+    <button class="lb-btn lb-close" type="button">Close ✕</button>
+  </div>
+  <div class="lb-stage">
+    <img alt="">
+    <button class="lb-btn lb-prev" type="button" aria-label="Previous photo">←</button>
+    <button class="lb-btn lb-next" type="button" aria-label="Next photo">→</button>
+  </div>
+  <div class="lb-cap">
+    <span class="t"></span>
+    <span class="x"></span>
+  </div>
+</div>
+
+<script>
+(() => {
+  const shots = [...document.querySelectorAll('.shot')];
+  const chips = [...document.querySelectorAll('.chip')];
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    const f = chip.dataset.filter;
+    chips.forEach(c => c.setAttribute('aria-pressed', String(c === chip)));
+    shots.forEach(s => { s.hidden = !(f === 'all' || s.dataset.cat === f); });
+  }));
+
+  const lb = document.getElementById('lightbox');
+  const img = lb.querySelector('.lb-stage img');
+  const t = lb.querySelector('.lb-cap .t');
+  const x = lb.querySelector('.lb-cap .x');
+  const n = lb.querySelector('.lb-n');
+  let list = [], idx = 0, lastFocus = null;
+
+  function show(i) {
+    idx = (i + list.length) % list.length;
+    const s = list[idx];
+    img.src = s.dataset.full;
+    img.alt = s.querySelector('img').alt;
+    t.textContent = s.dataset.title;
+    x.textContent = s.dataset.exif || '';
+    n.textContent = (idx + 1) + ' / ' + list.length + ' · ' + s.dataset.label;
+  }
+  function open(s) {
+    list = shots.filter(el => !el.hidden);
+    lastFocus = document.activeElement;
+    lb.hidden = false;
+    document.documentElement.classList.add('lb-open');
+    show(list.indexOf(s));
+    lb.querySelector('.lb-close').focus();
+  }
+  function close() {
+    lb.hidden = true;
+    document.documentElement.classList.remove('lb-open');
+    if (lastFocus) lastFocus.focus();
+  }
+  shots.forEach(s => s.querySelector('.shot-btn').addEventListener('click', () => open(s)));
+  lb.querySelector('.lb-close').addEventListener('click', close);
+  lb.querySelector('.lb-prev').addEventListener('click', () => show(idx - 1));
+  lb.querySelector('.lb-next').addEventListener('click', () => show(idx + 1));
+  lb.querySelector('.lb-stage').addEventListener('click', e => { if (e.target === e.currentTarget) close(); });
+  document.addEventListener('keydown', e => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') show(idx + 1);
+    else if (e.key === 'ArrowLeft') show(idx - 1);
+  });
+
+  const form = document.getElementById('book-form');
+  const note = document.getElementById('form-note');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    note.textContent = 'Preview only. This form gets connected when the site goes live.';
+  });
+})();
+</script>
+
+</body>
+</html>
