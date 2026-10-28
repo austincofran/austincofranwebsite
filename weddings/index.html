@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Weddings · Austin Cofran · Connecticut wedding photo and film</title>
+<meta name="description" content="Wedding photography and film by Austin Cofran. Natural light, honest moments and a cinematic finish, in Connecticut and anywhere you're getting married.">
+<!-- Testing phase: keep the test link out of search results. Remove this line at launch. -->
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Weddings · Austin Cofran">
+<meta property="og:description" content="Wedding photo and film with a cinematic finish. Based in Connecticut, booking across the US.">
+<meta property="og:image" content="https://austincofranwebsite.austincofran.workers.dev/assets/photos/couples/fall-couple-01-1800.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0D0E10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230D0E10'/%3E%3Ctext x='32' y='43' font-family='Arial Narrow,Arial,sans-serif' font-size='30' font-weight='700' fill='%23E2B56F' text-anchor='middle'%3EAC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;600;700&family=Albert+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+/* Weddings page additions */
+.book-copy .label{color:var(--amber)}
+#date-form .btn{color:#0D0E10}
+.w-hero{position:relative;min-height:clamp(560px,52vw,760px);display:flex;align-items:flex-end;overflow:hidden;background:var(--screen)}
+.w-hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 34%}
+.w-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,14,16,.95) 0%,rgba(13,14,16,.55) 45%,rgba(13,14,16,.15) 80%,rgba(13,14,16,.35) 100%)}
+.w-hero-in{position:relative;z-index:1;width:100%;padding-block:56px;display:flex;flex-direction:column;gap:20px}
+.w-hero-in p.body{margin:0;max-width:48ch;font-size:clamp(17px,1.5vw,20px);color:var(--soft)}
+
+.quick{background:var(--screen-2);border-bottom:1px solid var(--line)}
+.quick ul{list-style:none;margin:0;padding-block:24px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 28px}
+.quick li{display:flex;flex-direction:column;gap:2px;min-width:0}
+.quick b{font-family:var(--display);font-weight:500;font-size:22px;letter-spacing:.04em;text-transform:uppercase}
+.quick span{font-size:14px;color:var(--ash)}
+
+.film{position:relative;display:block;width:100%;aspect-ratio:16/9;background:#000;border:0;padding:0;cursor:pointer;overflow:hidden}
+.film img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .2s}
+.film:hover img{opacity:1}
+.film .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:14px;padding:16px 24px;background:var(--amber);color:var(--ink);font-family:var(--body);font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.film .play svg{width:14px;height:14px}
+.film iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.film-cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;margin-top:12px}
+
+.gallery{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:auto auto;gap:12px;margin-top:clamp(40px,5vw,64px)}
+.gallery img{width:100%;height:100%;object-fit:cover;min-height:0}
+.gallery .g1{grid-row:span 2;aspect-ratio:4/5}
+.gallery .g2,.gallery .g3{aspect-ratio:4/3}
+
+.pkgs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.pkg{display:flex;flex-direction:column;gap:16px;padding:32px;border:1px solid var(--rule);min-width:0}
+.pkg ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;color:var(--ink-2)}
+.pkg .for{margin:0;color:var(--ink-3);font-size:15px}
+.pkg .btn{margin-top:auto;align-self:flex-start}
+.pkg-outline{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.pkg-outline:hover{background:var(--ink);color:var(--paper)}
+.pkg.featured{background:var(--ink);color:var(--silver);border-color:var(--ink)}
+.pkg.featured ul{color:var(--soft)}
+.pkg.featured .for{color:var(--ash)}
+.badge{align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--amber);color:var(--ink);padding:6px 10px}
+.pkg-note{margin:28px 0 0;color:var(--ink-2)}
+
+.steps4{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+.faq{display:flex;flex-direction:column;border-top:1px solid var(--rule)}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-family:var(--display);font-weight:600;font-size:clamp(22px,2.2vw,28px);text-transform:uppercase}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);font-size:22px;font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:0 0 24px;max-width:62ch;color:var(--ink-2)}
+
+@media (max-width:900px){
+  .quick ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pkgs{grid-template-columns:1fr}
+  .steps4{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .gallery{grid-template-columns:1fr}
+  .gallery .g1{grid-row:auto}
+  .steps4{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="logo" href="/">Austin Cofran</a>
+    <nav class="nav" aria-label="Weddings">
+      <a class="navlink" href="#films">Films</a>
+      <a class="navlink" href="#packages">Packages</a>
+      <a class="navlink" href="#faq">FAQ</a>
+      <a class="btn" href="#date">Check your date</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="w-hero">
+    <img src="/assets/photos/couples/fall-couple-01-1800.webp" srcset="/assets/photos/couples/fall-couple-01-900.webp 675w, /assets/photos/couples/fall-couple-01-1800.webp 1350w" sizes="100vw" width="1350" height="1800" alt="Couple in black formalwear walking hand in hand through fall leaves" fetchpriority="high">
+    <div class="wrap w-hero-in">
+      <p class="label">Weddings · Now booking 2027</p>
+      <h1 class="h1">Your wedding, shot like a film.</h1>
+      <p class="body">Wedding photography and film in Connecticut and anywhere you're getting married. Natural light, honest moments and a cinematic finish, from getting ready to the last dance.</p>
+      <div class="ctas">
+        <a class="btn" href="#date">Check your date</a>
+        <a class="link" href="#films">Watch a film →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick" aria-label="At a glance">
+    <div class="wrap">
+      <ul>
+        <li><b>Photo, film or both</b><span>Pick what matters to you</span></li>
+        <li><b>Half or full day</b><span>Coverage that fits your timeline</span></li>
+        <li><b>From $1,500</b><span>Every collection can be adjusted</span></li>
+        <li><b>CT and beyond</b><span>Booking across the US</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="pad" id="films">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="label">Films</p>
+          <h2 class="h2">See a whole day.</h2>
+        </div>
+        <p class="sec-note" style="color:var(--soft)">Every film is edited to feel like your day did, with the vows, the speeches and the moments in between.</p>
+      </div>
+      <button class="film" type="button" id="film" data-yt="hQpOyHzfcG8" aria-label="Play Crystal and Brian's wedding film">
+        <img src="https://i.ytimg.com/vi/hQpOyHzfcG8/maxresdefault.jpg" alt="" loading="lazy">
+        <span class="play"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 1 L13 7 L2 13 Z" fill="currentColor"/></svg>Play film</span>
+      </button>
+      <div class="film-cap">
+        <span class="cap">Crystal &amp; Brian · Wedding film</span>
+        <a class="cap" href="https://www.youtube.com/watch?v=hQpOyHzfcG8" style="color:var(--ash)">Watch on YouTube</a>
+      </div>
+
+      <div class="gallery">
+        <img class="g1" src="/assets/photos/couples/first-dance-01-1800.webp" srcset="/assets/photos/couples/first-dance-01-900.webp 720w, /assets/photos/couples/first-dance-01-1800.webp 1440w" sizes="(max-width: 640px) 92vw, 52vw" width="1440" height="1800" loading="lazy" alt="Black and white photo of a groom dipping his bride in a bright ballroom">
+        <img class="g2" src="/assets/photos/couples/couple-bw-01-1800.webp" srcset="/assets/photos/couples/couple-bw-01-900.webp 900w, /assets/photos/couples/couple-bw-01-1800.webp 1800w" sizes="(max-width: 640px) 92vw, 42vw" width="1800" height="1350" loading="lazy" alt="Black and white close-up of a couple touching foreheads">
+        <img class="g3" src="/assets/photos/couples/fall-couple-01-1800.webp" srcset="/assets/photos/couples/fall-couple-01-900.webp 675w, /assets/photos/couples/fall-couple-01-1800.webp 1350w" sizes="(max-width: 640px) 92vw, 42vw" width="1350" height="1800" loading="lazy" alt="Couple in black formalwear walking through fall leaves" style="object-position:50% 40%">
+      </div>
+    </div>
+  </section>
+
+  <section class="paper pad" id="packages">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="label">Collections</p>
+          <h2 class="h2">Weddings start at $1,500.</h2>
+        </div>
+        <p class="sec-note">Three starting points. Every collection can be adjusted, and I'll send a full price list when you check your date.</p>
+      </div>
+      <div class="pkgs">
+        <article class="pkg">
+          <h3 class="h3">Photo</h3>
+          <p class="for">For couples who want the day in stills.</p>
+          <ul><li>Half or full-day coverage</li><li>High-resolution edited photos</li><li>Sneak peeks</li><li>Online gallery to share and download</li></ul>
+          <a class="btn pkg-outline" href="#date" data-pick="Photo">Check your date</a>
+        </article>
+        <article class="pkg featured">
+          <span class="badge">Recommended</span>
+          <h3 class="h3">Photo + Film</h3>
+          <p class="for">The whole day, seen and heard.</p>
+          <ul><li>Everything in Photo</li><li>4K feature film</li><li>Highlight video</li><li>Help planning your day's timeline</li></ul>
+          <a class="btn" href="#date" data-pick="Photo and film">Check your date</a>
+        </article>
+        <article class="pkg">
+          <h3 class="h3">Film</h3>
+          <p class="for">For couples who want to relive it in motion.</p>
+          <ul><li>Half or full-day coverage</li><li>4K feature film</li><li>Highlight video</li><li>Online delivery</li></ul>
+          <a class="btn pkg-outline" href="#date" data-pick="Film">Check your date</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" aria-label="How it works">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="label">How it works</p>
+          <h2 class="h2">From first message to final film.</h2>
+        </div>
+      </div>
+      <ol class="steps steps4">
+        <li><span class="n">01</span><h3 class="h3">Check your date</h3><p>Send your date, venue and email. It takes under a minute.</p></li>
+        <li><span class="n">02</span><h3 class="h3">Quick call</h3><p>We talk through your day, your people and what matters most.</p></li>
+        <li><span class="n">03</span><h3 class="h3">Reserve your date</h3><p>Sign the contract and your date is officially yours.</p></li>
+        <li><span class="n">04</span><h3 class="h3">Plan together</h3><p>I help with the timeline, then show up and handle the rest.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="about pad" aria-label="About Austin">
+    <div class="wrap about-in">
+      <div>
+        <p class="label">Your photographer</p>
+        <h2 class="h2">Hey, I'm Austin.</h2>
+      </div>
+      <div class="about-copy">
+        <p class="lead">I've had a camera in my hands since I was ten. On a wedding day I guide you when it helps and step back when it doesn't, so the photos and film feel like you, not like a photoshoot.</p>
+        <p>You'll work with me directly, from the first message to the final gallery. <a href="/" style="color:var(--amber)">See my other work →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper pad" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="label">FAQ</p>
+          <h2 class="h2">Good questions.</h2>
+        </div>
+      </div>
+      <div class="faq">
+        <details><summary>Do you travel?</summary><p>Yes. I'm based in Connecticut and book weddings across the US. Travel is worked into your quote.</p></details>
+        <details><summary>Can we customize a collection?</summary><p>Yes. Every collection is a starting point. Tell me what matters most and I'll build around it.</p></details>
+        <details><summary>Do you help with the timeline?</summary><p>Yes. Timeline help is part of the process, so the day runs smoothly and nothing important gets missed.</p></details>
+        <details><summary>How do we get our photos and film?</summary><p>You get sneak peeks first, then everything in an online gallery that's easy to share and download.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" id="date">
+    <div class="wrap book-in">
+      <div class="book-copy">
+        <p class="label">Check your date</p>
+        <h2 class="h2">Tell me about your day.</h2>
+        <p style="color:var(--soft)">A few quick details and I'll get back to you with availability and the full price list.</p>
+      </div>
+      <form class="form" id="date-form" novalidate style="--ink:#ECE7DD;--ink-3:#A39E95">
+        <div class="field">
+          <label for="w-date">Wedding date</label>
+          <input id="w-date" name="date" type="date">
+        </div>
+        <div class="field">
+          <label for="w-venue">Venue or city</label>
+          <input id="w-venue" name="venue" type="text" placeholder="e.g. Branford, CT">
+        </div>
+        <div class="field">
+          <label for="w-want">What are you looking for?</label>
+          <select id="w-want" name="want">
+            <option>Photo and film</option>
+            <option>Photo</option>
+            <option>Film</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="w-email">Email</label>
+          <input id="w-email" name="email" type="email" autocomplete="email" inputmode="email">
+        </div>
+        <button class="btn" type="submit">Check my date</button>
+        <p class="form-note">Just a reply from me. No mailing list.</p>
+        <p class="form-done" id="date-done" role="status" hidden style="background:var(--amber);color:#0D0E10">Thanks! This form isn't connected yet while the site is in testing. For now, message me on <a href="https://instagram.com/austincofran" style="color:#0D0E10">Instagram</a>.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <p class="foot-name">Austin Cofran</p>
+    <p class="foot-line">Wedding photo and film · Connecticut · Available across the US</p>
+    <nav class="social" aria-label="Social">
+      <a href="/">Portraits &amp; events</a>
+      <a href="https://instagram.com/austincofran">Instagram</a>
+      <a href="https://www.youtube.com/c/austincofran">YouTube</a>
+    </nav>
+    <p class="foot-small">© 2026 Austin Cofran</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const film = document.getElementById('film');
+  film.addEventListener('click', () => {
+    const f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + film.dataset.yt + '?autoplay=1&rel=0';
+    f.title = "Crystal and Brian's wedding film";
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    film.replaceChildren(f);
+    film.style.cursor = 'default';
+  }, { once: true });
+
+  const want = document.getElementById('w-want');
+  document.querySelectorAll('[data-pick]').forEach(a => a.addEventListener('click', () => {
+    want.value = a.dataset.pick === 'Photo and film' ? 'Photo and film' : a.dataset.pick;
+  }));
+
+  const form = document.getElementById('date-form');
+  form.addEventListener('submit', e => { e.preventDefault(); document.getElementById('date-done').hidden = false; });
+})();
+</script>
+</body>
+</html>
